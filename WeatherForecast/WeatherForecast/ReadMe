@@ -1,0 +1,23 @@
+
+- Şehirlere göre maksimum 16 güne kadar hava tahmin raporu gösteren bir uygulama olacak.
+
+Gerekli Bilgiler ve Dikkat Edilecekler:
+
+- Uygulama 3 ekrandan oluşacak.
+A) Listeleme sayfası: Uygulamada daha önce hava tahmin sorgulamasının yapıldığı şehirlerin listelendiği sayfa. (MainVC)
+B) Yeni tahmin raporu sorgulama sayfası: Hava tahmini sorgulanmak istenen şehrin adını, kaç günlük rapor isteniyor bilgisi (min:1 - max:16) girdilerinin alınacağı sayfa.
+C) Günlük hava tahmin raporu sayfası: Hava tahmin raporunun günlere göre listelendiği sayfa.
+
+- Anasayfa (MainVC) önceden hava tahmin raporu sorgulanmış olan şehirlerin listelendiği sayfa olmalı yani A sayfası. Fakat uygulamada daha önce hiç sorgulama yapılmadıysa direkt olarak girdilerin alınacağı B sayfası açılmalı.
+- A sayfasında uygulamada daha önce hava tahmin sorgulamasının yapıldığı şehirler listelenmeli, ayrıca B sayfasına ulaşıp yeni hava tahmini yapabileceği bir buton da olmalı.
+- B sayfasında hava tahmin raporu için kullanıcıdan gerekli girdiler alınmalı.
+- C sayfası hava tahmin raporunun gösterildiği sayfa olmalı. Listeleme mantığı her bir günün listedeki bir elemana karşılık geleceği şekilde olmalı. En üstte ilk gün, aşağı doğru ileriki günlerin hava tahminleri olacak şekilde.
+- A sayfasında listedeki her bir elemana tıklanmasıyla C sayfası açılmalı. Yani seçilen şehir için yeniden hava tahmin raporu alınmalı ve C sayfasında gösterilmeli.
+- Projeye eklenecek yeni sınıfların Swift dilinde olması tercih edilir.
+- C sayfasında listeleme elemanları için Auto Layout - Constraint lerin kullanımı olması tercih edilir.
+
+NOT: Hava tahmin raporu için bilgiler "api.openweathermap.org/data/2.5/forecast/daily?q=istanbul&units=metric&cnt=7&APPID={{APPID}}" linkinden çekilebilir. Bu api de parametreler:
+    - q -> Hava tahmini istenen şehrin adıdır
+    - cnt -> Kaç günlük hava tahmini istendiğidir
+    - APPID -> "41a47c0c4d7d86694bd472f51e33f937" şeklinde kullanılabilir.
+
