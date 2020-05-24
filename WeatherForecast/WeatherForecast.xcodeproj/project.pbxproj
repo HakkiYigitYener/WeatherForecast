@@ -18,6 +18,12 @@
 		AAC74CAD247AC0DB00B1B048 /* UITextField+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CAC247AC0DB00B1B048 /* UITextField+Extensions.m */; };
 		AAC74CB0247AD46B00B1B048 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CAF247AD46B00B1B048 /* UIViewController+Extensions.m */; };
 		AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CB2247AE02200B1B048 /* NetworkManager.m */; };
+		AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */; };
+		AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */; };
+		AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */; };
+		AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */; };
+		AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */; };
+		AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */; };
 		E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E4ADCA1D259FF3003C6FFF /* main.m */; };
 		E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E4ADCD1D259FF3003C6FFF /* AppDelegate.m */; };
 		E8E4ADD41D259FF3003C6FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4ADD21D259FF3003C6FFF /* Main.storyboard */; };
@@ -47,6 +53,18 @@
 		AAC74CAF247AD46B00B1B048 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
 		AAC74CB1247AE02200B1B048 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		AAC74CB2247AE02200B1B048 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecastResponseModel.m; sourceTree = "<group>"; };
+		AAC7715B247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDailyForecastResponseModel.h; sourceTree = "<group>"; };
+		AAC7715D247AEC26001C0B45 /* WeatherCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityModel.h; sourceTree = "<group>"; };
+		AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityModel.m; sourceTree = "<group>"; };
+		AAC77160247AEC75001C0B45 /* WeatherCoordinateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCoordinateModel.h; sourceTree = "<group>"; };
+		AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCoordinateModel.m; sourceTree = "<group>"; };
+		AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecastListModel.m; sourceTree = "<group>"; };
+		AAC77164247AED44001C0B45 /* WeatherDailyForecastListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDailyForecastListModel.h; sourceTree = "<group>"; };
+		AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTemperatureModel.m; sourceTree = "<group>"; };
+		AAC77167247AED7D001C0B45 /* WeatherTemperatureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTemperatureModel.h; sourceTree = "<group>"; };
+		AAC77169247AEE13001C0B45 /* WeatherConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherConditionModel.h; sourceTree = "<group>"; };
+		AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherConditionModel.m; sourceTree = "<group>"; };
 		E8E4ADC61D259FF3003C6FFF /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E4ADCA1D259FF3003C6FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8E4ADCC1D259FF3003C6FFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +127,18 @@
 			children = (
 				AA944FA324798FD900702256 /* City.h */,
 				AA944FA424798FD900702256 /* City.m */,
+				AAC7715B247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.h */,
+				AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */,
+				AAC7715D247AEC26001C0B45 /* WeatherCityModel.h */,
+				AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */,
+				AAC77160247AEC75001C0B45 /* WeatherCoordinateModel.h */,
+				AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */,
+				AAC77164247AED44001C0B45 /* WeatherDailyForecastListModel.h */,
+				AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */,
+				AAC77167247AED7D001C0B45 /* WeatherTemperatureModel.h */,
+				AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */,
+				AAC77169247AEE13001C0B45 /* WeatherConditionModel.h */,
+				AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,10 +299,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WeatherForecast/Pods-WeatherForecast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,14 +340,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */,
 				AAC74CAD247AC0DB00B1B048 /* UITextField+Extensions.m in Sources */,
+				AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */,
+				AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */,
 				AA944F942479742300702256 /* MainVC.m in Sources */,
 				AA944F9A2479831C00702256 /* WeatherDetailVC.m in Sources */,
 				AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */,
+				AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */,
 				AA944F972479830400702256 /* AddCityVC.m in Sources */,
 				E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */,
 				AA944FA9247A84E000702256 /* CityManager.m in Sources */,
+				AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */,
 				AAC74CB0247AD46B00B1B048 /* UIViewController+Extensions.m in Sources */,
+				AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */,
 				AA944FA02479839A00702256 /* CityCell.m in Sources */,
 				AA944FA524798FD900702256 /* City.m in Sources */,
 				E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */,

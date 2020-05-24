@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "City.h"
+#import "WeatherDailyForecastResponseModel.h"
+
+typedef void(^WeatherResultBlock)(BOOL success, WeatherDailyForecastResponseModel* _Nullable  responseData, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkManager : NSObject
+-(void)getWeatherDetail:(City*)city complationHandler:(WeatherResultBlock)handler;
 
 + (instancetype)shared;
-
 @end
 
 NS_ASSUME_NONNULL_END

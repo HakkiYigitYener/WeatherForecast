@@ -79,7 +79,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    //[[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
     if (self.cityNameTF == textField) {
         [self.reportDayCountTF becomeFirstResponder];
         return NO;
