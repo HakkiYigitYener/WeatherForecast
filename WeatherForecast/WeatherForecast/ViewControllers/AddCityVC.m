@@ -35,7 +35,7 @@
     [self.reportDayCountTF addToolbarTarget:self
                                      action:@selector(pickerDoneButtonTapped:)];
 }
-
+#pragma mark - Action Methods
 -(void)pickerDoneButtonTapped:(id)picker{
     [self.view endEditing:YES];
 }
@@ -60,7 +60,7 @@
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
-
+#pragma mark - UIPickerView Methods
 - (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
     return 1;
 }
@@ -76,7 +76,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.reportDayCountTF.text = [NSString stringWithFormat:@"%li",row + 1];
 }
-
+#pragma mark - UITextfield Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (self.cityNameTF == textField) {

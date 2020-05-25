@@ -1,5 +1,5 @@
 //
-//  WeatherDailyForecastListModel.h
+//  WeatherTemperatureModel.h
 //  KFOpenWeatherMapAPI
 //
 //  Copyright (c) 2013 Rico Becker, KF Interactive
@@ -22,78 +22,34 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+
 #import "JSONModel.h"
 
-@class WeatherTemperatureModel;
-@class WeatherFeelsLikeModel;
-
-@protocol WeatherConditionModel;
+/**
+ *  A model containing forecast temperatures for different times of the day.
+ */
+@interface WeatherFeelsLikeModel : JSONModel
 
 
 /**
- *  Contains all forecast data.
+ *  The temperature during the day.
  */
-@interface WeatherDailyForecastListModel : JSONModel
-
+@property (nonatomic, strong) NSNumber *day;
 
 /**
- *  The local date and time.
+ *  The temperature at night.
  */
-@property (nonatomic, strong) NSDate *dt;
-
+@property (nonatomic, strong) NSNumber *night;
 
 /**
- *  The air pressure.
+ *  The temperature at eve.
  */
-@property (nonatomic, strong) NSNumber *pressure;
-
+@property (nonatomic, strong) NSNumber *eve;
 
 /**
- *  The humidity value.
+ *  The temperature in the morning.
  */
-@property (nonatomic, strong) NSNumber *humidity;
-
-
-/**
- *  The amount of rain.
- */
-@property (nonatomic, strong) NSNumber<Optional> *rain;
-
-
-/**
- *  The wind speed.
- */
-@property (nonatomic, strong) NSNumber *windSpeed;
-
-/**
- *  The wind gust.
- */
-@property (nonatomic, strong) NSNumber<Optional> *windGust;
-
-
-/**
- *  The wind direction in degrees.
- */
-@property (nonatomic, strong) NSNumber *windDeg;
-
-
-/**
- *  A list of `WeatherConditionModel`s.
- */
-@property (nonatomic, strong) NSArray<WeatherConditionModel> *weather;
-
-
-/**
- *  A collection of temperatures during the day.
- */
-@property (nonatomic, strong) WeatherTemperatureModel *temperature;
-
-/**
- *  A collection of temperatures feelings during the day.
- */
-@property (nonatomic, strong) WeatherFeelsLikeModel *feelsLike;
-
--(NSArray*)convertToPropertyArray;
+@property (nonatomic, strong) NSNumber *morning;
 
 
 @end

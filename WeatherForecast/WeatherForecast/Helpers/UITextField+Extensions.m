@@ -26,7 +26,7 @@
 }
 
 -(UIPickerView*)addPickerView:(id<UIPickerViewDelegate>)delegate dataSource:(id<UIPickerViewDataSource>)dataSource {
-    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 00, 100, 200)];
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 00, [[UIScreen mainScreen] bounds].size.width, 200)];
     [picker setDelegate: delegate];
     [picker setDataSource: dataSource];
     picker.showsSelectionIndicator = YES;

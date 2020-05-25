@@ -25,7 +25,9 @@
     if (!city) {
         return [self getAllCities];
     }
-    NSMutableArray<City*>* cities = [self getAllCities];
+    
+    NSMutableArray<City*>* cities = [self removeCity:city];;
+    
     [cities addObject:city];
     return [self saveAllCities:cities];
     

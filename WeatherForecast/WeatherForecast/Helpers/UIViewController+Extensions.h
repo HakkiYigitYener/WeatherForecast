@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (Extensions)
 -(void)showAlertWithTitle:(NSString*)title message:(NSString*)message;
+-(void)showLoading;
+-(void)hideLoading;
 @end
 
 NS_ASSUME_NONNULL_END

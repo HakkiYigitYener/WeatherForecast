@@ -24,6 +24,10 @@
 		AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */; };
 		AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */; };
 		AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */; };
+		AAC7716E247B30D1001C0B45 /* WeatherFeelsLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7716D247B30D1001C0B45 /* WeatherFeelsLikeModel.m */; };
+		AAC77172247B3421001C0B45 /* WeatherDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77170247B3421001C0B45 /* WeatherDetailCell.m */; };
+		AAC77173247B3421001C0B45 /* WeatherDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC77171247B3421001C0B45 /* WeatherDetailCell.xib */; };
+		AAC77176247B4A12001C0B45 /* TitleValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77175247B4A12001C0B45 /* TitleValueModel.m */; };
 		E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E4ADCA1D259FF3003C6FFF /* main.m */; };
 		E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E4ADCD1D259FF3003C6FFF /* AppDelegate.m */; };
 		E8E4ADD41D259FF3003C6FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4ADD21D259FF3003C6FFF /* Main.storyboard */; };
@@ -65,6 +69,13 @@
 		AAC77167247AED7D001C0B45 /* WeatherTemperatureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTemperatureModel.h; sourceTree = "<group>"; };
 		AAC77169247AEE13001C0B45 /* WeatherConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherConditionModel.h; sourceTree = "<group>"; };
 		AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherConditionModel.m; sourceTree = "<group>"; };
+		AAC7716C247B30D1001C0B45 /* WeatherFeelsLikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFeelsLikeModel.h; sourceTree = "<group>"; };
+		AAC7716D247B30D1001C0B45 /* WeatherFeelsLikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFeelsLikeModel.m; sourceTree = "<group>"; };
+		AAC7716F247B3421001C0B45 /* WeatherDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailCell.h; sourceTree = "<group>"; };
+		AAC77170247B3421001C0B45 /* WeatherDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailCell.m; sourceTree = "<group>"; };
+		AAC77171247B3421001C0B45 /* WeatherDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailCell.xib; sourceTree = "<group>"; };
+		AAC77174247B4A12001C0B45 /* TitleValueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleValueModel.h; sourceTree = "<group>"; };
+		AAC77175247B4A12001C0B45 /* TitleValueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleValueModel.m; sourceTree = "<group>"; };
 		E8E4ADC61D259FF3003C6FFF /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E4ADCA1D259FF3003C6FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8E4ADCC1D259FF3003C6FFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +129,9 @@
 				AA944F9D2479839A00702256 /* CityCell.h */,
 				AA944F9E2479839A00702256 /* CityCell.m */,
 				AA944F9F2479839A00702256 /* CityCell.xib */,
+				AAC7716F247B3421001C0B45 /* WeatherDetailCell.h */,
+				AAC77170247B3421001C0B45 /* WeatherDetailCell.m */,
+				AAC77171247B3421001C0B45 /* WeatherDetailCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -137,8 +151,12 @@
 				AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */,
 				AAC77167247AED7D001C0B45 /* WeatherTemperatureModel.h */,
 				AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */,
+				AAC7716C247B30D1001C0B45 /* WeatherFeelsLikeModel.h */,
+				AAC7716D247B30D1001C0B45 /* WeatherFeelsLikeModel.m */,
 				AAC77169247AEE13001C0B45 /* WeatherConditionModel.h */,
 				AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */,
+				AAC77174247B4A12001C0B45 /* TitleValueModel.h */,
+				AAC77175247B4A12001C0B45 /* TitleValueModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +301,7 @@
 				E8E4ADE11D25A112003C6FFF /* ReadMe in Resources */,
 				AA944FA12479839A00702256 /* CityCell.xib in Resources */,
 				E8E4ADD91D259FF3003C6FFF /* LaunchScreen.storyboard in Resources */,
+				AAC77173247B3421001C0B45 /* WeatherDetailCell.xib in Resources */,
 				E8E4ADD61D259FF3003C6FFF /* Assets.xcassets in Resources */,
 				E8E4ADD41D259FF3003C6FFF /* Main.storyboard in Resources */,
 			);
@@ -345,15 +364,18 @@
 				AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */,
 				AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */,
 				AA944F942479742300702256 /* MainVC.m in Sources */,
+				AAC77172247B3421001C0B45 /* WeatherDetailCell.m in Sources */,
 				AA944F9A2479831C00702256 /* WeatherDetailVC.m in Sources */,
 				AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */,
 				AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */,
 				AA944F972479830400702256 /* AddCityVC.m in Sources */,
 				E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */,
 				AA944FA9247A84E000702256 /* CityManager.m in Sources */,
+				AAC7716E247B30D1001C0B45 /* WeatherFeelsLikeModel.m in Sources */,
 				AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */,
 				AAC74CB0247AD46B00B1B048 /* UIViewController+Extensions.m in Sources */,
 				AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */,
+				AAC77176247B4A12001C0B45 /* TitleValueModel.m in Sources */,
 				AA944FA02479839A00702256 /* CityCell.m in Sources */,
 				AA944FA524798FD900702256 /* City.m in Sources */,
 				E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */,

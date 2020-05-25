@@ -24,13 +24,44 @@
 //
 
 #import "WeatherDailyForecastListModel.h"
+#import "WeatherConditionModel.h"
+#import "WeatherTemperatureModel.h"
+#import "WeatherFeelsLikeModel.h"
+#import "TitleValueModel.h"
 
 @implementation WeatherDailyForecastListModel
 
 
 + (JSONKeyMapper *)keyMapper
 {
-    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"windSpeed": @"speed", @"windGust" : @"gust", @"windDeg" : @"deg", @"temperature" : @"temp"}];
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"windSpeed": @"speed", @"windGust" : @"gust", @"windDeg" : @"deg", @"temperature" : @"temp", @"feelsLike":@"feels_like"}];
+}
+
+-(NSArray*)convertToPropertyArray {
+    NSMutableArray* values = [[NSMutableArray alloc] init];
+    
+    
+    for (WeatherConditionModel * condition in self.weather) {
+        [values addObject:[TitleValueModel initWithTitle:@"Hava Durumu" stringValue:condition.weatherDescription]];
+    }
+    [values addObject:[TitleValueModel initWithTitle:@"Hava Basıncı" numberValue:self.pressure]];
+    [values addObject:[TitleValueModel initWithTitle:@"Nem Oranı" numberValue:self.humidity]];
+    if (self.rain) {
+        [values addObject:[TitleValueModel initWithTitle:@"Yağmur Oranı" numberValue:self.rain]];
+    }
+    [values addObject:[TitleValueModel initWithTitle:@"Rüzgar Hızı" numberValue:self.windSpeed]];
+    [values addObject:[TitleValueModel initWithTitle:@"Rüzgar Açısı" numberValue:self.windDeg]];
+    [values addObject:[TitleValueModel initWithTitle:@"Gündüz Sıcaklık" numberValue:self.temperature.day]];
+    [values addObject:[TitleValueModel initWithTitle:@"Gece Sıcaklık" numberValue:self.temperature.night]];
+    [values addObject:[TitleValueModel initWithTitle:@"Sabah Sıcaklık" numberValue:self.temperature.morning]];
+    [values addObject:[TitleValueModel initWithTitle:@"Akşam Sıcaklık" numberValue:self.temperature.eve]];
+    [values addObject:[TitleValueModel initWithTitle:@"En Düşük Sıcaklık" numberValue:self.temperature.min]];
+    [values addObject:[TitleValueModel initWithTitle:@"En Yüksek Sıcaklık" numberValue:self.temperature.max]];
+    [values addObject:[TitleValueModel initWithTitle:@"Hissedilen Gündüz Sıcaklık" numberValue:self.feelsLike.day]];
+    [values addObject:[TitleValueModel initWithTitle:@"Hissedilen Gece Sıcaklık" numberValue:self.feelsLike.night]];
+    [values addObject:[TitleValueModel initWithTitle:@"Hissedilen Sabah Sıcaklık" numberValue:self.feelsLike.morning]];
+    [values addObject:[TitleValueModel initWithTitle:@"Hissedilen Akşam Sıcaklık" numberValue:self.feelsLike.eve]];
+    return values;
 }
 
 

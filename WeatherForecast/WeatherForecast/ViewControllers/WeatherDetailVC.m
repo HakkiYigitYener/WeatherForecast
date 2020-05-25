@@ -8,8 +8,15 @@
 
 #import "WeatherDetailVC.h"
 #import "NetworkManager.h"
+#import "UIViewController+Extensions.h"
+#import "WeatherDetailCell.h"
+#import "WeatherDailyForecastListModel.h"
+#import "TitleValueModel.h"
 
-@interface WeatherDetailVC ()
+@interface WeatherDetailVC ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
+@property (nonatomic, strong) NSArray* dataSource;
+@property (nonatomic, strong) WeatherDailyForecastResponseModel* response;
 
 @end
 
@@ -17,23 +24,69 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title =  [NSString stringWithFormat:@"%@ Hava Durumu",self.city.name];
+    [self registerCells];
     [self loadWeatherDetail];
     
-//    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-//    indicator.center = self.view.center;
-//    [self.view addSubview:indicator];
-//    [indicator bringSubviewToFront:self.view];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
-//    [indicator startAnimating];
+}
+
+-(void)registerCells {
+    [self.weatherTableView registerNib:[UINib nibWithNibName:NSStringFromClass ([WeatherDetailCell class]) bundle:nil]
+               forCellReuseIdentifier:NSStringFromClass ([WeatherDetailCell class])];
 }
 
 -(void)loadWeatherDetail {
+    [self showLoading];
     [[NetworkManager shared] getWeatherDetail:self.city
                             complationHandler:^(BOOL success, WeatherDailyForecastResponseModel * _Nullable responseData, NSError * _Nullable error) {
-        
+        [self hideLoading];
+        if (success && !error) {
+            self.response = responseData;
+            [self createDataSource:responseData];
+        }
+        else {
+            [self showAlertWithTitle:@"Hata"
+                             message:error.localizedDescription];
+        }
     }];
+}
+
+-(void)createDataSource:(WeatherDailyForecastResponseModel*)response {
+    NSMutableArray* daysArray = [[NSMutableArray alloc] init];
+    for (WeatherDailyForecastListModel* item in response.list) {
+        [daysArray addObject:[item convertToPropertyArray]];
+    }
+    self.dataSource = daysArray;
+    [self.weatherTableView reloadData];
+}
+#pragma mark - UITableView Methods
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    WeatherDailyForecastListModel* dailyWeather = [self.response.list objectAtIndex:section];
+    
+    NSDateFormatter* df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"dd-MM-yyyy"];
+    return [df stringFromDate:dailyWeather.dt];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    WeatherDetailCell* cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass ([WeatherDetailCell class])
+                                                      forIndexPath:indexPath];
+    NSArray* dayArray = [self.dataSource objectAtIndex:indexPath.section];
+    TitleValueModel* rowValue = [dayArray objectAtIndex:indexPath.row];
+    [cell refreshCellWith:rowValue];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray* dayArray = [self.dataSource objectAtIndex:section];
+    return dayArray.count;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataSource.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
 }
 
 @end

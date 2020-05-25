@@ -11,6 +11,7 @@
 #import "CityCell.h"
 #import "WeatherDetailVC.h"
 #import "CityManager.h"
+#import "AddCityVC.h"
 
 @interface MainVC ()<UITableViewDelegate,UITableViewDataSource,CityManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *citiesTableView;
@@ -26,6 +27,7 @@
     [CityManager shared].delegate = self;
     [self registerCells];
     [self loadCities];
+    [self chechkIfListEmpty];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)chechkIfListEmpty {
+    if (self.cityList.count == 0) {
+        [self performSegueWithIdentifier:NSStringFromClass ([AddCityVC class]) sender:nil];
+    }
+}
 -(void)registerCells {
     [self.citiesTableView registerNib:[UINib nibWithNibName:NSStringFromClass ([CityCell class]) bundle:nil]
                forCellReuseIdentifier:NSStringFromClass ([CityCell class])];
@@ -44,13 +51,13 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"WeatherDetailVC"]) {
+    if ([segue.identifier isEqualToString:NSStringFromClass ([WeatherDetailVC class])]) {
         WeatherDetailVC* dest = segue.destinationViewController;
         dest.city = sender;
     }
 }
 
-#pragma mark - UITableView Merhods
+#pragma mark - UITableView Methods
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CityCell* cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass ([CityCell class])
@@ -63,7 +70,7 @@
     return self.cityList.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"WeatherDetailVC" sender:[self.cityList objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:NSStringFromClass ([WeatherDetailVC class]) sender:[self.cityList objectAtIndex:indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
