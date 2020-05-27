@@ -38,8 +38,8 @@
     }
 }
 -(void)registerCells {
-    [self.citiesTableView registerNib:[UINib nibWithNibName:Constants.aityCellIdentifier bundle:nil]
-               forCellReuseIdentifier:Constants.aityCellIdentifier];
+    [self.citiesTableView registerNib:[UINib nibWithNibName:Constants.cityCellIdentifier bundle:nil]
+               forCellReuseIdentifier:Constants.cityCellIdentifier];
 }
 
 -(void)loadCities {
@@ -57,7 +57,7 @@
 #pragma mark - UITableView Methods
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CityCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:Constants.aityCellIdentifier
+    CityCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:Constants.cityCellIdentifier
                                                       forIndexPath:indexPath];
     [cell refreshCellWith:[self.cityList objectAtIndex:indexPath.row]];
     return cell;
