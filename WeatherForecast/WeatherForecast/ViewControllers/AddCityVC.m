@@ -7,10 +7,11 @@
 //
 
 #import "AddCityVC.h"
-#import "City.h"
 #import "CityManager.h"
 #import "UITextField+Extensions.h"
 #import "UIViewController+Extensions.h"
+
+#import "WeatherForecast-Swift.h"
 
 @interface AddCityVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *cityNameTF;
@@ -53,7 +54,7 @@
         return;
     }
     
-    City* newCity = [[City alloc] init];
+    CitySwift* newCity = [[CitySwift alloc] init];
     newCity.name = self.cityNameTF.text;
     newCity.reportDayCount = [self.reportDayCountTF.text intValue];
     [[CityManager shared] addCity:newCity];

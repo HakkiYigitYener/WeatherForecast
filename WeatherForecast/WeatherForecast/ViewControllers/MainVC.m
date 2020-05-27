@@ -7,11 +7,11 @@
 //
 
 #import "MainVC.h"
-#import "City.h"
-#import "CityCell.h"
 #import "WeatherDetailVC.h"
 #import "CityManager.h"
 #import "AddCityVC.h"
+
+#import "WeatherForecast-Swift.h"
 
 @interface MainVC ()<UITableViewDelegate,UITableViewDataSource,CityManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *citiesTableView;
@@ -41,8 +41,8 @@
     }
 }
 -(void)registerCells {
-    [self.citiesTableView registerNib:[UINib nibWithNibName:NSStringFromClass ([CityCell class]) bundle:nil]
-               forCellReuseIdentifier:NSStringFromClass ([CityCell class])];
+    [self.citiesTableView registerNib:[UINib nibWithNibName:@"CityCell" bundle:nil]
+               forCellReuseIdentifier:@"CityCell"];
 }
 
 -(void)loadCities {
@@ -60,7 +60,7 @@
 #pragma mark - UITableView Methods
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CityCell* cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass ([CityCell class])
+    CityCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:@"CityCell"
                                                       forIndexPath:indexPath];
     [cell refreshCellWith:[self.cityList objectAtIndex:indexPath.row]];
     return cell;
@@ -74,7 +74,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    City* city = [self.cityList objectAtIndex:indexPath.row];
+    CitySwift* city = [self.cityList objectAtIndex:indexPath.row];
     [[CityManager shared] removeCity:city];
 }
 

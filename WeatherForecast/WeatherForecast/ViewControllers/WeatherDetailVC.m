@@ -12,6 +12,8 @@
 #import "WeatherDetailCell.h"
 #import "WeatherDailyForecastListModel.h"
 #import "TitleValueModel.h"
+#import "WeatherForecast-Swift.h"
+
 
 @interface WeatherDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *weatherTableView;

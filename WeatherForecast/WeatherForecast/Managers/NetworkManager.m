@@ -9,6 +9,7 @@
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
 #import "WeatherDailyForecastResponseModel.h"
+#import "WeatherForecast-Swift.h"
 
 @implementation NetworkManager
 
@@ -24,7 +25,7 @@ NSString* appId = @"41a47c0c4d7d86694bd472f51e33f937";
     return sharedInstance;
 }
 
--(void)getWeatherDetail:(City*)city complationHandler:(WeatherResultBlock)handler {
+-(void)getWeatherDetail:(CitySwift*)city complationHandler:(WeatherResultBlock)handler {
     NSDictionary *params = @{
         @"q":city.name,
         @"units":@"metric",

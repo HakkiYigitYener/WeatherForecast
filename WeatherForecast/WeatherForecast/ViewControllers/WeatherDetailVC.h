@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "City.h"
+@class CitySwift;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherDetailVC : UIViewController
 
-@property (nonatomic,strong) City* city;
+@property (nonatomic,strong) CitySwift* city;
 
 @end
 

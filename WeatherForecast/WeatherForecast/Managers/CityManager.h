@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "City.h"
+
+@class CitySwift;
 
 @protocol CityManagerDelegate <NSObject>
 
@@ -21,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(weak,nullable,nonatomic) id<CityManagerDelegate> delegate;
 
--(NSMutableArray<City*>*)addCity:(City*)city;
--(NSMutableArray<City*>*)removeCity:(City*)city;
--(NSMutableArray<City*>*)getAllCities;
+-(NSMutableArray<CitySwift*>*)addCity:(CitySwift*)city;
+-(NSMutableArray<CitySwift*>*)removeCity:(CitySwift*)city;
+-(NSMutableArray<CitySwift*>*)getAllCities;
 
 + (instancetype)shared;
 
