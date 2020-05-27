@@ -9,7 +9,6 @@
 #import "WeatherDetailVC.h"
 #import "NetworkManager.h"
 #import "UIViewController+Extensions.h"
-#import "WeatherDetailCell.h"
 #import "WeatherDailyForecastListModel.h"
 #import "TitleValueModel.h"
 #import "WeatherForecast-Swift.h"
@@ -33,8 +32,8 @@
 }
 
 -(void)registerCells {
-    [self.weatherTableView registerNib:[UINib nibWithNibName:NSStringFromClass ([WeatherDetailCell class]) bundle:nil]
-               forCellReuseIdentifier:NSStringFromClass ([WeatherDetailCell class])];
+    [self.weatherTableView registerNib:[UINib nibWithNibName:@"WeatherDetailCell" bundle:nil]
+               forCellReuseIdentifier:@"WeatherDetailCell"];
 }
 
 -(void)loadWeatherDetail {
@@ -71,7 +70,7 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    WeatherDetailCell* cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass ([WeatherDetailCell class])
+    WeatherDetailCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:@"WeatherDetailCell"
                                                       forIndexPath:indexPath];
     NSArray* dayArray = [self.dataSource objectAtIndex:indexPath.section];
     TitleValueModel* rowValue = [dayArray objectAtIndex:indexPath.row];
