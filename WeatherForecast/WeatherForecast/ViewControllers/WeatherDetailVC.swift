@@ -9,7 +9,7 @@
 import Foundation
 
 
-class WeatherDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeatherDetailVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet private weak var weatherTableView: UITableView!
     @objc var city: City?
     private var dataSource: [[TitleValueModel]]?
@@ -25,8 +25,8 @@ class WeatherDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     func registerCells() {
         weatherTableView.register(
-            UINib(nibName: "WeatherDetailCell", bundle: nil),
-            forCellReuseIdentifier: "WeatherDetailCell")
+            UINib(nibName: Constants.weatherDetailCellIdentifier, bundle: nil),
+            forCellReuseIdentifier: Constants.weatherDetailCellIdentifier)
     }
     func loadWeatherDetail() {
         showLoading()
@@ -35,8 +35,8 @@ class WeatherDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             complationHandler: { success, responseData, error in
                 self.hideLoading()
                 if success && error == nil {
-                    self.response = responseData
-                    self.createDataSource(responseData)
+                    self.response = responseData as? WeatherDailyForecastResponseModel
+                    self.createDataSource((responseData as! WeatherDailyForecastResponseModel))
                 } else {
                     self.showAlert(
                         withTitle: "Hata",
@@ -48,10 +48,7 @@ class WeatherDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         var daysArray: [[TitleValueModel]] = []
         if let list = response?.list {
             for item in list {
-                guard let item = item as? WeatherDailyForecastListModel else {
-                    continue
-                }
-                //        [daysArray addObject:[item convertToPropertyArray]];
+                daysArray.append(item.convertToPropertyArray())
             }
         }
         dataSource = daysArray
@@ -60,18 +57,18 @@ class WeatherDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 // MARK: - UITableView Methods
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let dailyWeather = response?.list[section]
-
+        let date = Date(timeIntervalSince1970:dailyWeather?.dt ?? 0)
         let df = DateFormatter()
-        df.dateFormat = "dd-MM-yyyy"
-        return "Today" //[df stringFromDate:dailyWeather.dt];
+        df.dateFormat = Constants.dayFormat
+        return df.string(from: date)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "WeatherDetailCell",
+            withIdentifier: Constants.weatherDetailCellIdentifier,
             for: indexPath) as? WeatherDetailCellSwift
         let dayArray = dataSource?[indexPath.section]
-        let rowValue = dayArray?[indexPath.row] as? TitleValueModel
+        let rowValue = dayArray?[indexPath.row]
         cell?.refreshCell(with: rowValue)
         return cell!
     }

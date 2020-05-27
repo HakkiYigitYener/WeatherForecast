@@ -21,7 +21,7 @@ class CityManager: NSObject {
         return shared
     }()
 
-    @objc func addCity(_ city: City?) -> [City] {
+    @objc @discardableResult func addCity(_ city: City?) -> [City] {
         if city == nil {
             return getAllCities()
         }
@@ -35,7 +35,7 @@ class CityManager: NSObject {
 
     }
 
-    @objc func removeCity(_ city: City?) -> [City] {
+    @objc @discardableResult func removeCity(_ city: City?) -> [City] {
         if city == nil {
             return getAllCities()
         }

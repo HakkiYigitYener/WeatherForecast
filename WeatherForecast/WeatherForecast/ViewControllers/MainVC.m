@@ -34,12 +34,12 @@
 
 -(void)chechkIfListEmpty {
     if (self.cityList.count == 0) {
-        [self performSegueWithIdentifier:@"AddCityVC" sender:nil];
+        [self performSegueWithIdentifier:Constants.addCityVCSegue sender:nil];
     }
 }
 -(void)registerCells {
-    [self.citiesTableView registerNib:[UINib nibWithNibName:@"CityCell" bundle:nil]
-               forCellReuseIdentifier:@"CityCell"];
+    [self.citiesTableView registerNib:[UINib nibWithNibName:Constants.aityCellIdentifier bundle:nil]
+               forCellReuseIdentifier:Constants.aityCellIdentifier];
 }
 
 -(void)loadCities {
@@ -48,7 +48,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:NSStringFromClass ([WeatherDetailVC class])]) {
+    if ([segue.identifier isEqualToString:Constants.weatherDetailVCSegue]) {
         WeatherDetailVC* dest = segue.destinationViewController;
         dest.city = sender;
     }
@@ -57,7 +57,7 @@
 #pragma mark - UITableView Methods
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CityCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:@"CityCell"
+    CityCellSwift* cell =  [tableView dequeueReusableCellWithIdentifier:Constants.aityCellIdentifier
                                                       forIndexPath:indexPath];
     [cell refreshCellWith:[self.cityList objectAtIndex:indexPath.row]];
     return cell;
@@ -67,7 +67,7 @@
     return self.cityList.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"WeatherDetailVC" sender:[self.cityList objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:Constants.weatherDetailVCSegue sender:[self.cityList objectAtIndex:indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

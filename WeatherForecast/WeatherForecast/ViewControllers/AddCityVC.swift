@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddCityVC:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddCityVC:BaseVC, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet private weak var cityNameTF: UITextField!
     @IBOutlet private weak var reportDayCountTF: UITextField!
@@ -47,8 +47,8 @@ class AddCityVC:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
         if cityNameTF.text?.count == 0 {
             showAlert(
-                withTitle: "Uyarı",
-                message: "Şehir adı boş olamaz.")
+                withTitle: Constants.warningTitle,
+                message: Constants.emptyCityNameInputMessage)
             return
         }
 
@@ -69,11 +69,11 @@ class AddCityVC:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(format: "%li", row + 1)
+        return "\(row + 1)"
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        reportDayCountTF.text = String(format: "%li", row + 1)
+        reportDayCountTF.text = "\(row + 1)"
     }
 // MARK: - UITextfield Methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

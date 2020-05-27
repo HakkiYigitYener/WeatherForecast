@@ -7,10 +7,7 @@
 //
 
 import Foundation
-typealias WeatherResultBlock = (Bool, WeatherDailyForecastResponseModel?, Error?) -> Void
-
-var baseURL = "https://api.openweathermap.org/data/2.5/forecast/daily"
-var appId = "41a47c0c4d7d86694bd472f51e33f937"
+typealias WeatherResultBlock = (Bool, Any?, Error?) -> Void
 
 class NetworkManager:NSObject {
     @objc static var shared: NetworkManager = {
@@ -18,46 +15,35 @@ class NetworkManager:NSObject {
         return shared
     }()
     
-    
-    
-    @objc func getWeatherDetail(_ city: City?,  complationHandler  handler: WeatherResultBlock) {
+    func getWeatherDetail(_ city: City?, complationHandler  handler: @escaping WeatherResultBlock) {
         
-//        var params: [String : Any?]? = nil
-//    if let name = city?.name, let reportDayCount = city?.reportDayCount {
-//        params = [
-//            "q": name,
-//            "units": "metric",
-//            "lang": "tr",
-//            "cnt": String(format: "%i", reportDayCount),
-//            "APPID": appId
-//        ]
-//    }
-//        AFHTTPSessionManager().get(
-//        baseURL,
-//        parameters: params,
-//        progress: nil,
-//        success: { task, responseObject in
-//            
-//            let weatherDailyForecastResponseModel = try? newJSONDecoder().decode(WeatherDailyForecastResponseModel.self, from: responseObject)
-//
-//            let responseDictionary = responseObject as? [AnyHashable : Any]
-//            var error: Error? = nil
-//            var responseModel: WeatherDailyForecastResponseModel? = nil
-//            do {
-//                    responseModel = try WeatherDailyForecastResponseModel(dictionary: responseDictionary)
-//                
-//            } catch {
-//            }
-//
-//            if error == nil {
-//                handler(true, responseModel, nil)
-//            } else {
-//                handler(false, responseObject as! WeatherDailyForecastResponseModel, error)
-//            }
-//
-//        },
-//        failure: { task, error in
-//            handler(false, nil, error)
-//        })
+    var params: [String : Any?]? = nil
+    if let name = city?.name, let reportDayCount = city?.reportDayCount {
+        params = [
+            "q": name,
+            "units": "metric",
+            "lang": "tr",
+            "cnt": String(format: "%i", reportDayCount),
+            "APPID": Constants.appId
+        ]
+    }
+        AFHTTPSessionManager().get(
+            Constants.baseURL,
+        parameters: params,
+        progress: nil,
+        success: { task, responseObject in
+
+            if task.error == nil {
+                let dataJson = try! JSONSerialization.data(withJSONObject: responseObject as Any, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let responseModel = try? JSONDecoder().decode(WeatherDailyForecastResponseModel.self, from: dataJson)
+                handler(true, responseModel, nil)
+            } else {
+                handler(false, responseObject, task.error)
+            }
+
+        },
+        failure: { task, error in
+            handler(false, nil, error)
+        })
     }
 }

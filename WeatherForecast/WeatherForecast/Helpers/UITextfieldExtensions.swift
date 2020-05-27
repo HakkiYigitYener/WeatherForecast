@@ -12,7 +12,7 @@ extension UITextField {
     @objc func addToolbar(_ target:Any?, action:Selector?) -> UIToolbar {
         let toolbar = UIToolbar.init(frame: CGRect(x: 0,y: 0,width: UIScreen.main.bounds.size.width,height: 44))
         toolbar.barStyle = .default
-        let doneButton = UIBarButtonItem.init(title: "Kapat",
+        let doneButton = UIBarButtonItem.init(title: Constants.close,
                                               style: .done,
                                               target: target,
                                               action: action)
