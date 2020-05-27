@@ -25,7 +25,7 @@
 
 #import "JSONModel.h"
 
-@class WeatherCityModel;
+@class WeatherCityModelSwift;
 
 @protocol WeatherDailyForecastListModel;
 
@@ -53,7 +53,7 @@
 /**
  *  A `WeatherCityModel` containing additional information about the requested city.
  */
-@property (nonatomic, strong) WeatherCityModel *city;
+@property (nonatomic, strong) WeatherCityModelSwift *city;
 
 
 /**

@@ -18,10 +18,10 @@
 		AABF0CAE247EBE38004AAB79 /* UITextfieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CAD247EBE38004AAB79 /* UITextfieldExtensions.swift */; };
 		AABF0CB0247ECBD5004AAB79 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CAF247ECBD5004AAB79 /* UIViewControllerExtensions.swift */; };
 		AABF0CB2247ED101004AAB79 /* CityManagerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CB1247ED101004AAB79 /* CityManagerSwift.swift */; };
+		AABF0CB4247EDB1D004AAB79 /* WeatherCityModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CB3247EDB1D004AAB79 /* WeatherCityModelSwift.swift */; };
+		AABF0CB6247EDB5F004AAB79 /* WeatherCoordinateModelSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CB5247EDB5F004AAB79 /* WeatherCoordinateModelSwift.swift */; };
 		AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CB2247AE02200B1B048 /* NetworkManager.m */; };
 		AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */; };
-		AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */; };
-		AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */; };
 		AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */; };
 		AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */; };
 		AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7716A247AEE14001C0B45 /* WeatherConditionModel.m */; };
@@ -52,14 +52,12 @@
 		AABF0CAD247EBE38004AAB79 /* UITextfieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtensions.swift; sourceTree = "<group>"; };
 		AABF0CAF247ECBD5004AAB79 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		AABF0CB1247ED101004AAB79 /* CityManagerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManagerSwift.swift; sourceTree = "<group>"; };
+		AABF0CB3247EDB1D004AAB79 /* WeatherCityModelSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityModelSwift.swift; sourceTree = "<group>"; };
+		AABF0CB5247EDB5F004AAB79 /* WeatherCoordinateModelSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinateModelSwift.swift; sourceTree = "<group>"; };
 		AAC74CB1247AE02200B1B048 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		AAC74CB2247AE02200B1B048 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecastResponseModel.m; sourceTree = "<group>"; };
 		AAC7715B247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDailyForecastResponseModel.h; sourceTree = "<group>"; };
-		AAC7715D247AEC26001C0B45 /* WeatherCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityModel.h; sourceTree = "<group>"; };
-		AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityModel.m; sourceTree = "<group>"; };
-		AAC77160247AEC75001C0B45 /* WeatherCoordinateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCoordinateModel.h; sourceTree = "<group>"; };
-		AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCoordinateModel.m; sourceTree = "<group>"; };
 		AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecastListModel.m; sourceTree = "<group>"; };
 		AAC77164247AED44001C0B45 /* WeatherDailyForecastListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDailyForecastListModel.h; sourceTree = "<group>"; };
 		AAC77166247AED7D001C0B45 /* WeatherTemperatureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTemperatureModel.m; sourceTree = "<group>"; };
@@ -134,10 +132,6 @@
 			children = (
 				AAC7715B247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.h */,
 				AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */,
-				AAC7715D247AEC26001C0B45 /* WeatherCityModel.h */,
-				AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */,
-				AAC77160247AEC75001C0B45 /* WeatherCoordinateModel.h */,
-				AAC77161247AEC75001C0B45 /* WeatherCoordinateModel.m */,
 				AAC77164247AED44001C0B45 /* WeatherDailyForecastListModel.h */,
 				AAC77163247AED43001C0B45 /* WeatherDailyForecastListModel.m */,
 				AAC77167247AED7D001C0B45 /* WeatherTemperatureModel.h */,
@@ -150,6 +144,8 @@
 				AAC77175247B4A12001C0B45 /* TitleValueModel.m */,
 				AABF0CA7247EAEF7004AAB79 /* CitySwift.swift */,
 				AABF0CA6247EAEF7004AAB79 /* WeatherForecast-Bridging-Header.h */,
+				AABF0CB3247EDB1D004AAB79 /* WeatherCityModelSwift.swift */,
+				AABF0CB5247EDB5F004AAB79 /* WeatherCoordinateModelSwift.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +348,7 @@
 			files = (
 				AABF0CAE247EBE38004AAB79 /* UITextfieldExtensions.swift in Sources */,
 				AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */,
+				AABF0CB4247EDB1D004AAB79 /* WeatherCityModelSwift.swift in Sources */,
 				AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */,
 				AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */,
 				AA944F942479742300702256 /* MainVC.m in Sources */,
@@ -365,10 +362,9 @@
 				E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */,
 				AABF0CB0247ECBD5004AAB79 /* UIViewControllerExtensions.swift in Sources */,
 				AAC7716E247B30D1001C0B45 /* WeatherFeelsLikeModel.m in Sources */,
-				AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */,
 				AABF0CA8247EAEF7004AAB79 /* CitySwift.swift in Sources */,
-				AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */,
 				AAC77176247B4A12001C0B45 /* TitleValueModel.m in Sources */,
+				AABF0CB6247EDB5F004AAB79 /* WeatherCoordinateModelSwift.swift in Sources */,
 				E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
