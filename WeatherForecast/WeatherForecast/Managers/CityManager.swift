@@ -12,15 +12,16 @@ import UIKit
     func cityListUpdated()
 }
 
-class CityManagerSwift: NSObject {
+class CityManager: NSObject {
+    let cityListKey = "cityListKey"
     @objc weak var delegate: CityManagerDelegate?
     
-    @objc static var shared: CityManagerSwift = {
-        var shared = CityManagerSwift.init()
+    @objc static var shared: CityManager = {
+        var shared = CityManager.init()
         return shared
     }()
 
-    @objc func addCity(_ city: CitySwift?) -> [CitySwift] {
+    @objc func addCity(_ city: City?) -> [City] {
         if city == nil {
             return getAllCities()
         }
@@ -34,12 +35,12 @@ class CityManagerSwift: NSObject {
 
     }
 
-    @objc func removeCity(_ city: CitySwift?) -> [CitySwift] {
+    @objc func removeCity(_ city: City?) -> [City] {
         if city == nil {
             return getAllCities()
         }
         var cities = getAllCities()
-        var cityToRemove: CitySwift? = nil
+        var cityToRemove: City? = nil
         for item in cities {
             if (item.name == city?.name) {
                 cityToRemove = item
@@ -51,14 +52,14 @@ class CityManagerSwift: NSObject {
 
         return saveAllCities(cities)
     }
-    @objc func getAllCities() -> [CitySwift] {
-        let data = UserDefaults.standard.object(forKey: "cityListKey") as? Data
+    @objc func getAllCities() -> [City] {
+        let data = UserDefaults.standard.object(forKey: cityListKey) as? Data
         if data == nil {
             return []
         }
-        var cities: [CitySwift]? = nil
+        var cities: [City]? = nil
         if let data = data {
-            cities = NSKeyedUnarchiver.unarchiveObject(with: data) as? [CitySwift]
+            cities = NSKeyedUnarchiver.unarchiveObject(with: data) as? [City]
         }
         if cities == nil {
             cities = []
@@ -67,10 +68,10 @@ class CityManagerSwift: NSObject {
         return cities!
     }
 
-    @objc func saveAllCities(_ cities: [CitySwift]) -> [CitySwift] {
+    @objc func saveAllCities(_ cities: [City]) -> [City] {
         let currentDefaults = UserDefaults.standard
         let data = NSKeyedArchiver.archivedData(withRootObject: cities)
-        currentDefaults.set(data, forKey: "cityListKey")
+        currentDefaults.set(data, forKey: cityListKey)
         UserDefaults.standard.synchronize()
         delegate?.cityListUpdated()
         return getAllCities()

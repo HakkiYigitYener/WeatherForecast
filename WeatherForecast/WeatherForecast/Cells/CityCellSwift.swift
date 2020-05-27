@@ -21,7 +21,7 @@ class CityCellSwift: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @objc func refreshCell(with city:CitySwift) {
-        cityNameLabel.text = "\(city.name ?? "") şehrinin \(city.reportDayCount) günlük hava durumu"
+    @objc func refreshCell(with city:City?) {
+        cityNameLabel.text = "\(city?.name ?? "") şehrinin \(city?.reportDayCount ?? 0) günlük hava durumu"
     }
 }

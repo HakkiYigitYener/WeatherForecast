@@ -7,8 +7,6 @@
 //
 
 #import "MainVC.h"
-#import "WeatherDetailVC.h"
-#import "AddCityVC.h"
 
 #import "WeatherForecast-Swift.h"
 
@@ -23,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CityManagerSwift shared].delegate = self;
+    [CityManager shared].delegate = self;
     [self registerCells];
     [self loadCities];
     [self chechkIfListEmpty];
@@ -36,7 +34,7 @@
 
 -(void)chechkIfListEmpty {
     if (self.cityList.count == 0) {
-        [self performSegueWithIdentifier:NSStringFromClass ([AddCityVC class]) sender:nil];
+        [self performSegueWithIdentifier:@"AddCityVC" sender:nil];
     }
 }
 -(void)registerCells {
@@ -45,7 +43,7 @@
 }
 
 -(void)loadCities {
-    self.cityList = [[CityManagerSwift shared] getAllCities];
+    self.cityList = [[CityManager shared] getAllCities];
     [self.citiesTableView reloadData];
 }
 
@@ -69,12 +67,12 @@
     return self.cityList.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:NSStringFromClass ([WeatherDetailVC class]) sender:[self.cityList objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"WeatherDetailVC" sender:[self.cityList objectAtIndex:indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    CitySwift* city = [self.cityList objectAtIndex:indexPath.row];
-    [[CityManagerSwift shared] removeCity:city];
+    City* city = [self.cityList objectAtIndex:indexPath.row];
+    [[CityManager shared] removeCity:city];
 }
 
 #pragma mark - CityManagerDelegate Methods

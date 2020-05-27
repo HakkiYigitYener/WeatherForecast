@@ -63,7 +63,7 @@
         <!--Hava Durumu-->
         <scene sceneID="bNy-bT-430">
             <objects>
-                <viewController title="Hava Durumu" id="JD3-ke-eeQ" customClass="WeatherDetailVC" sceneMemberID="viewController">
+                <viewController title="Hava Durumu" id="JD3-ke-eeQ" customClass="WeatherDetailVC" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sws-sm-mPc"/>
                         <viewControllerLayoutGuide type="bottom" id="XD0-Hi-iAc"/>
@@ -101,7 +101,7 @@
         <!--Şehir Ekle-->
         <scene sceneID="BaH-mM-5X4">
             <objects>
-                <viewController title="Şehir Ekle" id="Rdw-Xz-BCw" customClass="AddCityVC" sceneMemberID="viewController">
+                <viewController title="Şehir Ekle" id="Rdw-Xz-BCw" customClass="AddCityVC" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9iC-bs-8Jq"/>
                         <viewControllerLayoutGuide type="bottom" id="Fls-ah-M1i"/>

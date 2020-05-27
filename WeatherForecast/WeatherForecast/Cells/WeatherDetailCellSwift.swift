@@ -22,9 +22,9 @@ class WeatherDetailCellSwift: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @objc func refreshCell(with model:TitleValueModel) {
-        titleLabel.text = model.title
-        valueLabel.text = model.value
+    @objc func refreshCell(with model:TitleValueModel?) {
+        titleLabel.text = model?.title ?? ""
+        valueLabel.text = model?.value ?? ""
     }
 
 }

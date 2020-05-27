@@ -14,8 +14,10 @@ var indicator: UIActivityIndicatorView? = nil
 
 extension UIViewController {
     
-    @available(iOS 8.0, *)
+    
+    
    @objc func showAlert(withTitle title: String?, message: String?) {
+    if #available(iOS 8.0, *) {
         alertController = UIAlertController(
             title: title,
             message: message,
@@ -30,6 +32,10 @@ extension UIViewController {
                 alertController,
                 animated: true)
         }
+    } else {
+        // Fallback on earlier versions
+    }
+        
     }
     
     @objc func showLoading() {

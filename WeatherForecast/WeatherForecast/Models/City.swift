@@ -8,18 +8,15 @@
 
 import UIKit
 
-public class CitySwift: NSObject,NSCoding {
-    @objc public var name: NSString? = nil
+public class City: NSObject,NSCoding {
+    @objc public var name: String? = nil
     @objc public var reportDayCount: Int32 = 0
     
     @objc public override init() {
         
     }
-    
-    
-    
     required public init?(coder: NSCoder) {
-        name = coder.decodeObject(forKey: "name") as? NSString
+        name = coder.decodeObject(forKey: "name") as? String
         reportDayCount = coder.decodeInt32(forKey: "reportDayCount")
     }
     
