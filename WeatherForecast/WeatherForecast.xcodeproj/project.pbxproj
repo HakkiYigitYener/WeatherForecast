@@ -12,12 +12,12 @@
 		AA944F972479830400702256 /* AddCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA944F962479830400702256 /* AddCityVC.m */; };
 		AA944F9A2479831C00702256 /* WeatherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA944F992479831C00702256 /* WeatherDetailVC.m */; };
 		AA944FA12479839A00702256 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA944F9F2479839A00702256 /* CityCell.xib */; };
-		AA944FA9247A84E000702256 /* CityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA944FA8247A84E000702256 /* CityManager.m */; };
 		AABF0CA8247EAEF7004AAB79 /* CitySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CA7247EAEF7004AAB79 /* CitySwift.swift */; };
 		AABF0CAA247EB87A004AAB79 /* CityCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CA9247EB87A004AAB79 /* CityCellSwift.swift */; };
 		AABF0CAC247EBB84004AAB79 /* WeatherDetailCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CAB247EBB84004AAB79 /* WeatherDetailCellSwift.swift */; };
-		AAC74CAD247AC0DB00B1B048 /* UITextField+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CAC247AC0DB00B1B048 /* UITextField+Extensions.m */; };
-		AAC74CB0247AD46B00B1B048 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CAF247AD46B00B1B048 /* UIViewController+Extensions.m */; };
+		AABF0CAE247EBE38004AAB79 /* UITextfieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CAD247EBE38004AAB79 /* UITextfieldExtensions.swift */; };
+		AABF0CB0247ECBD5004AAB79 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CAF247ECBD5004AAB79 /* UIViewControllerExtensions.swift */; };
+		AABF0CB2247ED101004AAB79 /* CityManagerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF0CB1247ED101004AAB79 /* CityManagerSwift.swift */; };
 		AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC74CB2247AE02200B1B048 /* NetworkManager.m */; };
 		AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */; };
 		AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7715E247AEC26001C0B45 /* WeatherCityModel.m */; };
@@ -45,16 +45,13 @@
 		AA944F982479831C00702256 /* WeatherDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDetailVC.h; sourceTree = "<group>"; };
 		AA944F992479831C00702256 /* WeatherDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailVC.m; sourceTree = "<group>"; };
 		AA944F9F2479839A00702256 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
-		AA944FA7247A84E000702256 /* CityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityManager.h; sourceTree = "<group>"; };
-		AA944FA8247A84E000702256 /* CityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityManager.m; sourceTree = "<group>"; };
 		AABF0CA6247EAEF7004AAB79 /* WeatherForecast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherForecast-Bridging-Header.h"; sourceTree = "<group>"; };
 		AABF0CA7247EAEF7004AAB79 /* CitySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySwift.swift; sourceTree = "<group>"; };
 		AABF0CA9247EB87A004AAB79 /* CityCellSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellSwift.swift; sourceTree = "<group>"; };
 		AABF0CAB247EBB84004AAB79 /* WeatherDetailCellSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailCellSwift.swift; sourceTree = "<group>"; };
-		AAC74CAB247AC0DB00B1B048 /* UITextField+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extensions.h"; sourceTree = "<group>"; };
-		AAC74CAC247AC0DB00B1B048 /* UITextField+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extensions.m"; sourceTree = "<group>"; };
-		AAC74CAE247AD46B00B1B048 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
-		AAC74CAF247AD46B00B1B048 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
+		AABF0CAD247EBE38004AAB79 /* UITextfieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtensions.swift; sourceTree = "<group>"; };
+		AABF0CAF247ECBD5004AAB79 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		AABF0CB1247ED101004AAB79 /* CityManagerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManagerSwift.swift; sourceTree = "<group>"; };
 		AAC74CB1247AE02200B1B048 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		AAC74CB2247AE02200B1B048 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		AAC7715A247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecastResponseModel.m; sourceTree = "<group>"; };
@@ -160,10 +157,9 @@
 		AA944FA6247A84C900702256 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				AA944FA7247A84E000702256 /* CityManager.h */,
-				AA944FA8247A84E000702256 /* CityManager.m */,
 				AAC74CB1247AE02200B1B048 /* NetworkManager.h */,
 				AAC74CB2247AE02200B1B048 /* NetworkManager.m */,
+				AABF0CB1247ED101004AAB79 /* CityManagerSwift.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -171,10 +167,8 @@
 		AAC74CAA247AC01B00B1B048 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AAC74CAB247AC0DB00B1B048 /* UITextField+Extensions.h */,
-				AAC74CAC247AC0DB00B1B048 /* UITextField+Extensions.m */,
-				AAC74CAE247AD46B00B1B048 /* UIViewController+Extensions.h */,
-				AAC74CAF247AD46B00B1B048 /* UIViewController+Extensions.m */,
+				AABF0CAD247EBE38004AAB79 /* UITextfieldExtensions.swift */,
+				AABF0CAF247ECBD5004AAB79 /* UIViewControllerExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -356,23 +350,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABF0CAE247EBE38004AAB79 /* UITextfieldExtensions.swift in Sources */,
 				AAC7715C247AEAFA001C0B45 /* WeatherDailyForecastResponseModel.m in Sources */,
-				AAC74CAD247AC0DB00B1B048 /* UITextField+Extensions.m in Sources */,
 				AAC7716B247AEE14001C0B45 /* WeatherConditionModel.m in Sources */,
 				AAC77165247AED44001C0B45 /* WeatherDailyForecastListModel.m in Sources */,
 				AA944F942479742300702256 /* MainVC.m in Sources */,
 				AABF0CAA247EB87A004AAB79 /* CityCellSwift.swift in Sources */,
+				AABF0CB2247ED101004AAB79 /* CityManagerSwift.swift in Sources */,
 				AA944F9A2479831C00702256 /* WeatherDetailVC.m in Sources */,
 				AAC74CB3247AE02200B1B048 /* NetworkManager.m in Sources */,
 				AABF0CAC247EBB84004AAB79 /* WeatherDetailCellSwift.swift in Sources */,
 				AAC77168247AED7D001C0B45 /* WeatherTemperatureModel.m in Sources */,
 				AA944F972479830400702256 /* AddCityVC.m in Sources */,
 				E8E4ADCE1D259FF3003C6FFF /* AppDelegate.m in Sources */,
-				AA944FA9247A84E000702256 /* CityManager.m in Sources */,
+				AABF0CB0247ECBD5004AAB79 /* UIViewControllerExtensions.swift in Sources */,
 				AAC7716E247B30D1001C0B45 /* WeatherFeelsLikeModel.m in Sources */,
 				AAC7715F247AEC26001C0B45 /* WeatherCityModel.m in Sources */,
 				AABF0CA8247EAEF7004AAB79 /* CitySwift.swift in Sources */,
-				AAC74CB0247AD46B00B1B048 /* UIViewController+Extensions.m in Sources */,
 				AAC77162247AEC75001C0B45 /* WeatherCoordinateModel.m in Sources */,
 				AAC77176247B4A12001C0B45 /* TitleValueModel.m in Sources */,
 				E8E4ADCB1D259FF3003C6FFF /* main.m in Sources */,

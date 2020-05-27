@@ -7,9 +7,6 @@
 //
 
 #import "AddCityVC.h"
-#import "CityManager.h"
-#import "UITextField+Extensions.h"
-#import "UIViewController+Extensions.h"
 
 #import "WeatherForecast-Swift.h"
 
@@ -31,10 +28,11 @@
 -(void)setupUI {
     self.dayPicker = [self.reportDayCountTF addPickerView:self
                                           dataSource:self];
-    [self.cityNameTF addToolbarTarget:self
+    
+    [self.cityNameTF addToolbar:self
+                         action:@selector(pickerDoneButtonTapped:)];
+    [self.reportDayCountTF addToolbar:self
                                action:@selector(pickerDoneButtonTapped:)];
-    [self.reportDayCountTF addToolbarTarget:self
-                                     action:@selector(pickerDoneButtonTapped:)];
 }
 #pragma mark - Action Methods
 -(void)pickerDoneButtonTapped:(id)picker{
@@ -57,7 +55,7 @@
     CitySwift* newCity = [[CitySwift alloc] init];
     newCity.name = self.cityNameTF.text;
     newCity.reportDayCount = [self.reportDayCountTF.text intValue];
-    [[CityManager shared] addCity:newCity];
+    [[CityManagerSwift shared] addCity:newCity];
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }

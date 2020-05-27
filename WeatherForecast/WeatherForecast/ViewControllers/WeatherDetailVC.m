@@ -8,7 +8,6 @@
 
 #import "WeatherDetailVC.h"
 #import "NetworkManager.h"
-#import "UIViewController+Extensions.h"
 #import "WeatherDailyForecastListModel.h"
 #import "TitleValueModel.h"
 #import "WeatherForecast-Swift.h"

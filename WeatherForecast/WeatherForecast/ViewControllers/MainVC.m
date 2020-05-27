@@ -8,7 +8,6 @@
 
 #import "MainVC.h"
 #import "WeatherDetailVC.h"
-#import "CityManager.h"
 #import "AddCityVC.h"
 
 #import "WeatherForecast-Swift.h"
@@ -24,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CityManager shared].delegate = self;
+    [CityManagerSwift shared].delegate = self;
     [self registerCells];
     [self loadCities];
     [self chechkIfListEmpty];
@@ -46,7 +45,7 @@
 }
 
 -(void)loadCities {
-    self.cityList = [[CityManager shared] getAllCities];
+    self.cityList = [[CityManagerSwift shared] getAllCities];
     [self.citiesTableView reloadData];
 }
 
@@ -75,7 +74,7 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     CitySwift* city = [self.cityList objectAtIndex:indexPath.row];
-    [[CityManager shared] removeCity:city];
+    [[CityManagerSwift shared] removeCity:city];
 }
 
 #pragma mark - CityManagerDelegate Methods
